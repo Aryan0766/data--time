@@ -1,21 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Date + Time</title>
-</head>
-<body>
-
 <script>
 
 function onKawara () {
-  document.body.style.background = '#1b2a49'      // 1. background color
-  document.body.style.margin = '0'
-  document.body.style.minHeight = '100vh'
+  document.body.style.background = '#1e3a5f'   
+  // CHANGED: background color
+  document.body.style.height = '100vh'
   document.body.style.display = 'grid'
   document.body.style.justifyContent = 'center'
-  document.body.style.alignContent = 'center'     // keeps the stack centered
+  document.body.style.alignItems = 'center'
 
   const d = new Date()
   const day = d.getDate()
@@ -26,25 +17,20 @@ function onKawara () {
   const m = d.getMonth()
   const month = months[m]
   const year = d.getFullYear()
-  const dateString = `${day} ${month} ${year}`    // 5. new order: day, month, year
+  const dateString = `${year}, ${day} ${month}.`   
+  // CHANGED: order of the dateString
 
-  // 4. all five generic font families
-  const families = ['serif', 'sans-serif', 'monospace', 'cursive', 'fantasy']
-
-  families.forEach((family) => {
-    const span = document.createElement('span')
-    span.textContent = dateString
-    span.style.color = '#fff105'                 
-    span.style.fontSize = '26'                   
-    span.style.fontFamily = family               
-    span.style.textAlign = 'center'
-    document.body.appendChild(span)
-  })
+  const span = document.createElement('span')
+  span.textContent = dateString
+  span.style.color = '#ffd166'                      
+  // CHANGED: font color 
+  span.style.fontSize = '6vw'                       
+    // CHANGED: font size 
+  span.style.fontFamily = 'Georgia, "Times New Roman", Times, serif'  
+  // CHANGED: font family
+  document.body.appendChild(span)
 }
 
 window.addEventListener('load', onKawara)
 
 </script>
-
-</body>
-</html>
